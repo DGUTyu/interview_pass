@@ -1,6 +1,5 @@
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { logger } from '@luyao/basic';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { logger } from '../../../../Index';
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {

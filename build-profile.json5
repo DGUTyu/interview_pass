@@ -35,6 +35,10 @@
           ]
         }
       ]
+    },
+    {
+      "name": "basic",
+      "srcPath": "./commons/basic",
     }
   ]
 }

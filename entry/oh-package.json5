@@ -5,6 +5,8 @@
   "main": "",
   "author": "",
   "license": "",
-  "dependencies": {}
+  "dependencies": {
+    "@luyao/basic": "file:../commons/basic"
+  },
 }
 
