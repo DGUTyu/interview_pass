@@ -1,12 +1,12 @@
 {
-  "name": "entry",
+  "name": "phone",
   "version": "1.0.0",
   "description": "Please describe the basic information.",
   "main": "",
   "author": "",
   "license": "",
   "dependencies": {
-    "@luyao/basic": "file:../commons/basic"
+    "@luyao/basic": "file:../../commons/basic"
   },
 }
 
