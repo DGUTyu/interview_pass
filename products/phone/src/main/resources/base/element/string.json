@@ -5,12 +5,32 @@
       "value": "module description"
     },
     {
-      "name": "EntryAbility_desc",
+      "name": "PhoneAbility_desc",
       "value": "description"
     },
     {
-      "name": "EntryAbility_label",
-      "value": "label"
+      "name": "PhoneAbility_label",
+      "value": "面试通"
+    },
+    {
+      "name": "index_home",
+      "value": "首页"
+    },
+    {
+      "name": "PhoneFormAbility_desc",
+      "value": "form_description"
+    },
+    {
+      "name": "PhoneFormAbility_label",
+      "value": "form_label"
+    },
+    {
+      "name": "widget_desc",
+      "value": "搞定企业面试真题"
+    },
+    {
+      "name": "widget_display_name",
+      "value": "widget"
     }
   ]
 }
