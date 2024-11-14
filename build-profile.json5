@@ -39,6 +39,22 @@
     {
       "name": "basic",
       "srcPath": "./commons/basic",
+    },
+    {
+      "name": "home",
+      "srcPath": "./features/home",
+    },
+    {
+      "name": "interview",
+      "srcPath": "./features/interview",
+    },
+    {
+      "name": "mine",
+      "srcPath": "./features/mine",
+    },
+    {
+      "name": "project",
+      "srcPath": "./features/project",
     }
   ]
 }

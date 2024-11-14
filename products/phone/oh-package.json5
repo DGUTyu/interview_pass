@@ -6,7 +6,11 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@luyao/basic": "file:../../commons/basic"
+    "@luyao/basic": "file:../../commons/basic",
+    "@luyao/home": "file:../../features/home",
+    "@luyao/interview": "file:../../features/interview",
+    "@luyao/mine": "file:../../features/mine",
+    "@luyao/project": "file:../../features/project"
   },
 }
 
