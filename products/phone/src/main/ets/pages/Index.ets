@@ -1,4 +1,5 @@
 import { statusBar } from '@luyao/basic'
+import { TabBarComp } from '../view/index/TabBarComp'
 
 @Entry
 @Component
@@ -13,7 +14,19 @@ struct Index {
   @StorageProp('topHeight') topHeight: number = 0
   @StorageProp('bottomHeight') bottomHeight: number = 0
 
+  @State
+  activeIndex: number = 0
+
   build() {
+    //this.testUtils()
+    Flex() {
+      TabBarComp({ activeIndex: this.activeIndex })
+    }
+    .backgroundColor($r('app.color.white'))
+  }
+
+  @Builder
+  testUtils() {
     Column() {
       Text('top')
       Blank()
