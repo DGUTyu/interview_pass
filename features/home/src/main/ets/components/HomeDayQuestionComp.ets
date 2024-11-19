@@ -1,5 +1,9 @@
+import { logger } from '@luyao/basic';
+
 @Component
 export struct HomeDayQuestionComp {
+  @State
+  offSetDay:number=0
   monthWords: string[] = [
     "JAN",
     "FEB",
@@ -16,6 +20,30 @@ export struct HomeDayQuestionComp {
   ]
   monthText: string = this.monthWords[new Date().getMonth()]
   today: string = new Date().getDate().toString().padStart(2, '0')
+
+  aboutToAppear(): void {
+    let temp = new Date().getFullYear() + '-' + (new Date().getMonth() + 1)
+    this.offSetDay = new Date(temp).getDay()
+    logger.debug('HomeDayQuestionComp', 'offSetDay' + this.offSetDay)
+  }
+
+  getMonthDays() {
+    let currentDate = new Date();
+    let currentYear = currentDate.getFullYear();
+    // 注意：getMonth() 返回的月份是从0开始的
+    let currentMonth = currentDate.getMonth();
+
+    // 创建一个日期对象，设置为当前月份的下一个月，日期设置为0（这会自动设置为上一个月的最后一天）
+    // 当你创建一个Date对象并尝试将日期（日）部分设置为0或负数时，Date对象会将其解释为上一个月的最后一天。
+    let lastDayOfCurrentMonth = new Date(currentYear, currentMonth + 1, 0);
+
+    // 获取当前月份的天数
+    const daysInCurrentMonth = lastDayOfCurrentMonth.getDate();
+
+    logger.debug('HomeDayQuestionComp', `当前月份一共有 ${daysInCurrentMonth} 天`)
+
+    return daysInCurrentMonth
+  }
 
   build() {
     Row() {
@@ -58,8 +86,9 @@ export struct HomeDayQuestionComp {
         //日历图表
         Column() {
           GridRow({ columns: 7, gutter: 6 }) {
-            ForEach(Array(30).fill(() => 1), (item: number, index: number) => {
-              GridCol() {
+            ForEach(Array(this.getMonthDays()).fill(() => 1), (item: number, index: number) => {
+              //一周第一天是：周日
+              GridCol(index === 0 ? { offset: this.offSetDay } : {}) {
                 Row() {
 
                 }
