@@ -1,4 +1,4 @@
-import { HdSearch } from '@luyao/basic'
+import { HdClockIn, HdSearch } from '@luyao/basic'
 
 @Component
 export struct HomeComp {
@@ -18,9 +18,12 @@ export struct HomeComp {
         HdSearch({
           // searchWidth:200,
           // searchHeight:30
-          layoutValue:1
+          layoutValue: 1
         })
         //打卡
+        HdClockIn({
+          clockCount: 123
+        })
       }
       .width('100%')
       .padding({
