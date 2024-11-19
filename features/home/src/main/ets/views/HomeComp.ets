@@ -1,9 +1,19 @@
-import { HdClockIn, HdSearch } from '@luyao/basic'
+import { BasicConstant, HdClockIn, HdSearch } from '@luyao/basic'
 
 @Component
 export struct HomeComp {
   @StorageProp('topHeight')
   topHeight: number = 0
+
+  @Builder
+  SwiperItemBuilder(src: ResourceStr) {
+    Flex() {
+      Image(src)
+        .objectFit(ImageFit.Fill)
+    }
+    .padding({ left: BasicConstant.SPACE_LG, right: BasicConstant.SPACE_LG })
+    .aspectRatio(2.8)
+  }
 
   build() {
     Column() {
@@ -30,6 +40,24 @@ export struct HomeComp {
         left: 16,
         right: 16
       })
+
+      //轮播图
+      Row() {
+        Swiper() {
+          this.SwiperItemBuilder($r('app.media.banner_qa'))
+          this.SwiperItemBuilder($r('app.media.banner_pj'))
+          this.SwiperItemBuilder($r('app.media.banner_ai'))
+        }
+        .autoPlay(true)
+        .indicator(DotIndicator.dot()
+          .selectedColor(Color.White)
+          .bottom(BasicConstant.SPACE_SM)
+          .itemHeight(BasicConstant.SPACE_SM)
+          .selectedItemHeight(BasicConstant.SPACE_SM)
+          .itemWidth(BasicConstant.SPACE_MD)
+          .selectedItemWidth(BasicConstant.SPACE_MD))
+      }
+
     }.height('100%')
     .width('100%')
     .backgroundColor($r('app.color.common_gray_bg'))
