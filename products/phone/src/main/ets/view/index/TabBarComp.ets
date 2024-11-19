@@ -34,8 +34,7 @@ export struct TabBarComp {
               HomeComp()
             } else if (index === 1) {
               ProjectComp()
-            } else if (index ===
-              2) {
+            } else if (index === 2) {
               InterviewComp()
             } else {
               MineComp()
@@ -49,6 +48,7 @@ export struct TabBarComp {
       .onTabBarClick((index) => {
         this.activeIndex = index
       })
+      //只能点，不能左右滑动
       .scrollable(false)
       .margin({ bottom: this.bottomHeight })
     }
