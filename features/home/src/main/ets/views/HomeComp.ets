@@ -1,4 +1,5 @@
 import { BasicConstant, HdClockIn, HdSearch } from '@luyao/basic'
+import { HomeDayQuestionComp } from '../components/HomeDayQuestionComp'
 
 @Component
 export struct HomeComp {
@@ -57,6 +58,9 @@ export struct HomeComp {
           .itemWidth(BasicConstant.SPACE_MD)
           .selectedItemWidth(BasicConstant.SPACE_MD))
       }
+
+      //每日一题
+      HomeDayQuestionComp()
 
     }.height('100%')
     .width('100%')
