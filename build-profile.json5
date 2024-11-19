@@ -55,6 +55,10 @@
     {
       "name": "project",
       "srcPath": "./features/project",
+    },
+    {
+      "name": "calendar",
+      "srcPath": "./commons/calendar",
     }
   ]
 }
