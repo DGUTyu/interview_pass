@@ -1,4 +1,4 @@
-import { BasicConstant, HdClockIn, HdSearch } from '@luyao/basic'
+import { BasicConstant, HdClockIn, HdSearch, HdTag } from '@luyao/basic'
 import { HomeCategoryComp } from '../components/HomeCategoryComp'
 import { HomeDayQuestionComp } from '../components/HomeDayQuestionComp'
 
@@ -71,6 +71,11 @@ export struct HomeComp {
       .backgroundColor($r('app.color.white'))
       .width('100%')
 
+      Column({ space: 5 }) {
+        HdTag({ difficulty: 1 })
+        HdTag({ difficulty: 3 })
+        HdTag({ text: 'HarmonyOS'})
+      }
 
     }.height('100%')
     .width('100%')
