@@ -1,4 +1,5 @@
 import { BasicConstant, HdClockIn, HdSearch } from '@luyao/basic'
+import { HomeCategoryComp } from '../components/HomeCategoryComp'
 import { HomeDayQuestionComp } from '../components/HomeDayQuestionComp'
 
 @Component
@@ -61,6 +62,15 @@ export struct HomeComp {
 
       //每日一题
       HomeDayQuestionComp()
+
+      //试题分类
+      Column() {
+        HomeCategoryComp()
+      }
+      .layoutWeight(1)
+      .backgroundColor($r('app.color.white'))
+      .width('100%')
+
 
     }.height('100%')
     .width('100%')
