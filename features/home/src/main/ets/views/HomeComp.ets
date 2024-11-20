@@ -1,6 +1,9 @@
 import { BasicConstant, HdClockIn, HdSearch, HdTag } from '@luyao/basic'
 import { HomeCategoryComp } from '../components/HomeCategoryComp'
 import { HomeDayQuestionComp } from '../components/HomeDayQuestionComp'
+import { QuestionItemComp } from '../components/QuestionItemComp'
+import { QuestionItem, QuestionItemModel } from '../models/QuestionItemModel'
+import { promptAction } from '@kit.ArkUI'
 
 @Component
 export struct HomeComp {
@@ -71,10 +74,21 @@ export struct HomeComp {
       .backgroundColor($r('app.color.white'))
       .width('100%')
 
-      Column({ space: 5 }) {
-        HdTag({ difficulty: 1 })
-        HdTag({ difficulty: 3 })
-        HdTag({ text: 'HarmonyOS'})
+      // Column({ space: 5 }) {
+      //   HdTag({ difficulty: 1 })
+      //   HdTag({ difficulty: 3 })
+      //   HdTag({ text: 'HarmonyOS'})
+      // }
+
+      Column() {
+        ForEach(new Array(10).fill(0), () => {
+          QuestionItemComp({
+            item: questionItem,
+            onClickItem: () => {
+              promptAction.showToast({ message: '点击了' })
+            }
+          })
+        })
       }
 
     }.height('100%')
@@ -82,4 +96,13 @@ export struct HomeComp {
     .backgroundColor($r('app.color.common_gray_bg'))
     .padding({ top: this.topHeight })
   }
+}
+
+const questionItem: QuestionItem = {
+  id: '100',
+  stem: '请说下ArkUI的容器组件有哪些？',
+  difficulty: 3,
+  likeCount: 23,
+  views: 423,
+  readFlag: 1
 }
