@@ -4,6 +4,7 @@ import { HomeDayQuestionComp } from '../components/HomeDayQuestionComp'
 import { QuestionItemComp } from '../components/QuestionItemComp'
 import { QuestionItem, QuestionItemModel } from '../models/QuestionItemModel'
 import { promptAction } from '@kit.ArkUI'
+import { QuestionListComp } from '../components/QuestionListComp'
 
 @Component
 export struct HomeComp {
@@ -67,12 +68,12 @@ export struct HomeComp {
       HomeDayQuestionComp()
 
       //试题分类
-      Column() {
-        HomeCategoryComp()
-      }
-      .layoutWeight(1)
-      .backgroundColor($r('app.color.white'))
-      .width('100%')
+      // Column() {
+      //   HomeCategoryComp()
+      // }
+      // .layoutWeight(1)
+      // .backgroundColor($r('app.color.white'))
+      // .width('100%')
 
       // Column({ space: 5 }) {
       //   HdTag({ difficulty: 1 })
@@ -80,16 +81,7 @@ export struct HomeComp {
       //   HdTag({ text: 'HarmonyOS'})
       // }
 
-      Column() {
-        ForEach(new Array(10).fill(0), () => {
-          QuestionItemComp({
-            item: questionItem,
-            onClickItem: () => {
-              promptAction.showToast({ message: '点击了' })
-            }
-          })
-        })
-      }
+      QuestionListComp().layoutWeight(1)
 
     }.height('100%')
     .width('100%')
